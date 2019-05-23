@@ -4,12 +4,12 @@
 
 ?>
 
-<?php 
+<?php
 
 	// LOGIN CODE
 
 	session_start();
-	
+
 	if(isset($_POST['submit'])) {
 
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
@@ -17,7 +17,7 @@
 
 		$sql = "SELECT ID FROM PERSONEN WHERE USERNAME = '$myusername' and PASSWORD = '$mypassword'";
 	    $result = mysqli_query($db,$sql);
-	    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);      
+	    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 	    $count = mysqli_num_rows($result);
 
 			if ($count == 1) {
@@ -29,7 +29,7 @@
 
 			}
 
-	} 
+	}
 
  ?>
 

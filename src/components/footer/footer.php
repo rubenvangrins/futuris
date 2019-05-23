@@ -1,3 +1,2 @@
-  <script type="text/javascript" src="build/js/bundle.js"></script>
-</body>
+  <script type="text/javascript" src="src/includes/js/main.js"></script>
 </html>
