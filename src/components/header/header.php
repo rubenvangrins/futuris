@@ -8,3 +8,8 @@
   <link rel="stylesheet" href="build/css/index.css">
 </head>
 <body>
+<?php
+
+ require_once( $_SERVER['DOCUMENT_ROOT'] . "/futuris/src/includes/module_config.php" );
+
+?>
