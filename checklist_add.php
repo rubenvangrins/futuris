@@ -17,8 +17,8 @@
 		$targetname = $_POST['targetname'];
 		$comment = $_POST['comment'];
 
-		$sql = "INSERT INTO checklist (PERSONID, TARGET_DATE, TARGET_NAME, COMMENT, CHECKED)
-				VALUES ('$personid', '$targetdate', '$targetname', '$comment', 'nee')";
+		$sql = "INSERT INTO checklist (PERSONID, TARGET_DATE, DAYPART, TARGET_NAME, COMMENT, CHECKED)
+				VALUES ('$personid', '$targetdate', 'NaN', $targetname', '$comment', 'nee')";
 
 		mysqli_query($db, $sql);
 
