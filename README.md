@@ -1,10 +1,10 @@
 # Futuris Autisme Applicatie
 
 
-# How to pull
+## How to pull
 git pull origin develop
 
-# How to push
+## How to push
 1. git status
 2. git add .
 3. git status
