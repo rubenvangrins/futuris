@@ -13,9 +13,13 @@
 <?php
 
   /* Windows */
-  // require_once( $_SERVER['DOCUMENT_ROOT'] . "/futuris/src/includes/module_config.php" );
+  require_once( $_SERVER['DOCUMENT_ROOT'] . "/futuris/src/includes/module_config.php" );
 
   /* Mac */
-  require_once( $_SERVER['DOCUMENT_ROOT'] . "/src/includes/module_config.php" );
+  // require_once( $_SERVER['DOCUMENT_ROOT'] . "/src/includes/module_config.php" );
 
 ?>
+
+<div class="mobiletemplate">
+
+

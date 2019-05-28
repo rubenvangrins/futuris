@@ -25,7 +25,7 @@
 				// GEEF PERSOONID MEE
 				$_SESSION['personid'] = $row["ID"];
 
-				header("Location: checklist.php");
+				header("Location: doelen.php");
 
 			}
 
