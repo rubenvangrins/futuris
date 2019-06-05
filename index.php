@@ -25,7 +25,7 @@
 				// GEEF PERSOONID MEE
 				$_SESSION['personid'] = $row["ID"];
 
-				header("Location: doelen.php");
+				header("Location: app_home.php");
 
 			}
 
@@ -35,9 +35,16 @@
 
  <!-- HTML -->
 
+ <div class="logo">
+   <img src="src/includes/img/logo.png" alt="">
+ </div>
+
  <form action="" method="POST">
+  <span>Email adres</span>
 	<input type="text" name="username">
-	<input type="password" name="password">
+  <!-- <span>Wachtwoord</span> -->
+	<input type="password" name="password" placeholder="wachtwoord">
+  <a class="forgot-pass" href="#">Wachtwoord vergeten?</a>
 	<input type="submit" name="submit" value="Inloggen">
  </form>
 

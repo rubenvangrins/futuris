@@ -4,10 +4,10 @@
    define('DB_USERNAME', 'root');
 
    /* Windows */
-   define('DB_PASSWORD', '');
+   // define('DB_PASSWORD', '');
 
    /* Mac */
-   // define('DB_PASSWORD', 'root');
+   define('DB_PASSWORD', 'root');
 
    define('DB_DATABASE', 'futuris');
 
