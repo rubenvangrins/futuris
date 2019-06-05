@@ -31,7 +31,7 @@ function beunhaas() {
       let isChecked = checked.classList.contains("checked");
 
       for (let sel = 0; sel < checkbox.length; sel++) {
-        console.log(sel);
+
       }
 
     })

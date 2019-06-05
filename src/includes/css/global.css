@@ -130,6 +130,10 @@ span.time {
 	position: relative;
 }
 
+body {
+	background: blue;
+}
+
 .inner_bar {
     background: #FD7578;
     width: 0%;

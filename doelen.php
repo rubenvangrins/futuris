@@ -4,24 +4,24 @@
 
 ?>
 
-<?php 
+<?php
 
 	// ONTVANG CHECKLIST DATA
 
 	session_start();
 
 	$res = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE PERSONID = '".$_SESSION['personid']."'");
-	
+
 	//$doelen = mysqli_query($db, "SELECT * FROM subdoelen WHERE TARGETID = '".$test["ID"]."'");
 
-	while ($row=mysqli_fetch_array($res)) { 
+	while ($row=mysqli_fetch_array($res)) {
 
 		$doelen = mysqli_query($db, "SELECT * FROM subdoelen WHERE TARGETID = '".$row["ID"]."'");
 		$checked = mysqli_query($db, "SELECT * FROM subdoelen WHERE TARGETID = '".$row["ID"]."' AND CHECKED = 'ja'");
 
 		$count_total = mysqli_num_rows($doelen);
 		$count_checked = mysqli_num_rows($checked);
-	
+
  ?>
 
  <!-- HTML -->
@@ -31,7 +31,7 @@
  <meter value="<?php echo $count_checked ?>" min="0" max="<?php echo $count_total ?>"></meter>
  <br>
 
-<?php 
+<?php
 
 	while ($test=mysqli_fetch_array($doelen)) {
 

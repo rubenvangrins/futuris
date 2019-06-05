@@ -4,7 +4,7 @@
 
 ?>
 
-<?php 
+<?php
 
 	// ONTVANG CHECKLIST DATA
 
@@ -12,9 +12,9 @@
 
 	$res = mysqli_query($db, "SELECT * FROM checklist WHERE PERSONID = '".$_SESSION['personid']."'");
 
-	while ($row=mysqli_fetch_array($res)) { 
+	while ($row=mysqli_fetch_array($res)) {
 
-	
+
 
  ?>
 
@@ -30,7 +30,7 @@
  <h3><?php echo $row['TARGET_NAME']; ?></h3>
  <p><?php echo $row['COMMENT']; ?></p>
 
-<?php 
+<?php
 
  	};
 

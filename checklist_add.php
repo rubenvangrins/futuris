@@ -4,7 +4,7 @@
 
 ?>
 
-<?php 
+<?php
 
 	// VOEG ACTIVITEIT TOE
 

@@ -4,7 +4,7 @@
 
 ?>
 
-<?php 
+<?php
 
 	// VOEG HOOFDDOEL TOE
 
@@ -13,7 +13,7 @@
 	if(isset($_POST['submit'])) {
 
 		$id = $_SESSION['personid'];
-		$name = $_POST['name'];	
+		$name = $_POST['name'];
 		$rerun = $_POST['rerun'];
 
 		$sql = "INSERT INTO hoofdoelen (PERSONID, NAME, RERUN)

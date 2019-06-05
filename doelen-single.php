@@ -23,7 +23,7 @@
             20 min.
           </span>
           <div class="text">
-            Denk aan het poetsen van je tanden, het opmaken van je bed en het inpakken van je tas.
+            Denk aan het poetsen van je tanden, hedt opmaken van je bed en het inpakken van je tas.
           </div>
         </li>
         <li>
