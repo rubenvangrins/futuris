@@ -38,15 +38,16 @@
  <div class="logo">
    <img src="src/includes/img/logo.png" alt="">
  </div>
-
+<div class="login">
  <form action="" method="POST">
   <span>Email adres</span>
-	<input type="text" name="username">
-  <!-- <span>Wachtwoord</span> -->
+	<input type="text" name="username" placeholder="Email" autocomplete="off">
+  <span>Wachtwoord</span>
 	<input type="password" name="password" placeholder="wachtwoord">
   <a class="forgot-pass" href="#">Wachtwoord vergeten?</a>
 	<input type="submit" name="submit" value="Inloggen">
  </form>
+ </div>
 
 <?php
 

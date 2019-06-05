@@ -84,11 +84,9 @@ input[type="text"] {
 
 .footer__bottom {
 	position: fixed;
-	left: 50%;
-	bottom: 79px;
-	width: 372px;
-	transform: translateX(-50%);
 	overflow: hidden;
+	left: 0;
+	bottom: 0;
 }
 
 a.footer__link {
@@ -193,6 +191,17 @@ span.time {
   box-sizing: border-box;
 }
 
+.mobilemenu {
+	width: 370px;
+	height: 72px;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: none;
+	margin-bottom: -440px;
+}
+
 .no_padding {
 	padding: 30px 0;
 }
@@ -202,7 +211,7 @@ span.time {
 	opacity: .4;
 }
 
-form {
+.login form {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -210,7 +219,7 @@ form {
 	width: calc(100% - 60px);
 }
 
-form span {
+.login form span {
     font-size: 12px;
     font-weight: 600;
     color: #FD7578;
@@ -237,7 +246,7 @@ input[type="submit"] {
 		margin-top: 20px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], textarea {
     width: 100%;
     margin: 5px 0;
     border: none;
@@ -246,6 +255,8 @@ input[type="text"], input[type="password"] {
 		padding: 10px 0;
     background: #fbfbfb;
 }
+
+textarea { resize: vertical; }
 
 input:-internal-autofill-selected {
 		background-color: white !important;
@@ -391,4 +402,108 @@ input[type="checkbox"] {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.back_button{
+	position: relative;
+}
+
+.back_button input[type="submit"] {
+    background: none;
+    width: 20%;
+	padding: 10px 20px 10px 0;
+    border: none;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 3px;
+	margin-top: 0px;
+	text-decoration: underline;
+	text-align: left;
+}
+
+.button_toevoegen {
+    background: none;
+	padding: 20px 0 20px 0;
+    border: none;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 3px;
+	margin: 10px 0;
+	text-decoration: underline;
+	text-align: right;
+	font-size: 15px;
+	position: absolute;
+	top: 0;
+	right: 33px;
+}
+
+.add {
+	margin: 0;
+	padding: 0;
+}
+
+.add form span {
+	font-size: 12px;
+    font-weight: 600;
+    color: black;
+}
+
+.add input[type="submit"] {
+    width: auto;
+    border: none;
+	color: white;
+    background: #FD7578;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+}
+
+select {
+    width: 100%;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #FD7578;
+		font-family: 'Poppins', sans-serif;
+		padding: 10px 0;
+    background: #fbfbfb;;
+}
+
+.button_terug {
+    background: none;
+    width: 20%;
+	padding: 20px 20px 20px 0;
+    border: none;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 3px;
+	margin: 10px 0;
+	text-decoration: underline;
+	text-align: left;
+	font-size: 15px;
+}
+
+.voegtoe {
+    width: auto;
+    border: none;
+	color: white;
+    background: #FD7578;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0px;
+    float: right;
+    font-family: 'Poppins', sans-serif;
+}
+
+.add_single {
+	padding: 0;
+	margin-bottom: 20px;
 }

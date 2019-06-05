@@ -1,40 +1,46 @@
 <?php include  __DIR__ . '/src/components/header/header.php'; ?>
 
+<?php
+
+  session_start();
+
+  $doelen_prio1 = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE PERSONID = '".$_SESSION['personid']."' AND PRIO = 1 ORDER BY ID DESC");
+  $count_prio1 = mysqli_num_rows($doelen_prio1);
+
+  $doelen_prio2 = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE PERSONID = '".$_SESSION['personid']."' AND PRIO = 2 ORDER BY ID DESC");
+  $count_prio2 = mysqli_num_rows($doelen_prio2);
+
+
+ ?>
+
+<div class="container add_single">
+      <a class="button_terug" href="doelen-single.php">Terug</a>
+      <a class="button_toevoegen" href="doel_add.php">Hoofddoel Toevoegen</a>
+  </div>
+
 <div class="doelen__single">
   <div class="daily__goals">
     <div class="header">
       Prioriteit 1
-      <span>3 doelen</span>
+      <span><?php echo $count_prio1 ?> doelen</span>
     </div>
     <div class="content">
       <ul>
+
+        <?php while ($row=mysqli_fetch_array($doelen_prio1)) { ?>
+
         <li>
-          <a href="tas_inpakken.php">Tas inpakken</a>
+          <a href="doelen_detail.php?id=<?php echo $row['ID']; ?>"><?php echo $row['NAME']; ?></a>
           <span class="time">
-            5 min.
+            <?php echo $row['TIME']; ?> min.
           </span>
           <div class="text">
-            Denk aan de oplader en muis van je laptop
+            <?php echo $row['INFO']; ?>
           </div>
         </li>
-        <li>
-          <a href="#">Ochtendritueel verbeteren</a>
-          <span class="time">
-            20 min.
-          </span>
-          <div class="text">
-            Denk aan het poetsen van je tanden, hedt opmaken van je bed en het inpakken van je tas.
-          </div>
-        </li>
-        <li>
-          <a href="#">Ochtendritueel verbeteren</a>
-          <span class="time">
-            20 min.
-          </span>
-          <div class="text">
-            Vergeet niet om je sleutels mee te nemen zodat je de deur kunt sluiten.
-          </div>
-        </li>
+
+        <?php } ?>
+
       </ul>
     </div>
   </div>
@@ -42,31 +48,29 @@
   <div class="sub__goals">
     <div class="header">
       Prioriteit 2
-      <span>2 doelen</span>
+      <span><?php echo $count_prio2 ?> doelen</span>
     </div>
     <div class="content">
       <ul>
+
+        <?php while ($row=mysqli_fetch_array($doelen_prio2)) { ?>
+
         <li>
-          <a href="#">Ochtendritueel verbeteren</a>
+          <a href="doelen_detail.php?id=<?php echo $row['ID']; ?>"><?php echo $row['NAME']; ?></a>
           <span class="time">
-            20 min.
+            <?php echo $row['TIME']; ?> min.
           </span>
           <div class="text">
-            Vergeet niet om je sleutels mee te nemen zodat je de deur kunt sluiten.
+            <?php echo $row['INFO']; ?>
           </div>
         </li>
-        <li>
-          <a href="#">Tas inpakken</a>
-          <span class="time">
-            5 min.
-          </span>
-          <div class="text">
-            Vergeet niet om je sleutels mee te nemen zodat je de deur kunt sluiten.
-          </div>
-        </li>
+
+        <?php } ?>
+
       </ul>
     </div>
   </div>
 </div>
+
 
 <?php include __DIR__ . '/src/components/footer/footer.php'; ?>

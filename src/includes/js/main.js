@@ -2,7 +2,15 @@ const inpakken = window.location.pathname;
 
 const template = document.querySelector('.mobiletemplate');
 
-if (window.location.href.indexOf("tas_inpakken") != -1) {
+if (window.location.href.indexOf("doelen_detail") != -1) {
+  template.classList.add("no_padding");
+}
+
+if (window.location.href.indexOf("doel_add") != -1) {
+  template.classList.add("no_padding");
+}
+
+if (window.location.href.indexOf("subdoel_add") != -1) {
   template.classList.add("no_padding");
 }
 
@@ -15,7 +23,7 @@ const checkbox = document.querySelectorAll('.checkbox');
 
 
 let items = document.querySelector(".list").childElementCount;
-let procent = 100 / items;
+let procent = 100 / items * 3;
 
 // you can use forEach here too
 [].forEach.call(checkbox, el => {
@@ -45,6 +53,28 @@ function beunhaas() {
     bar.style.width = procent * i + "%";
 
   }
+}
+
+function test(a, b) {
+
+  var checkboxid = "checkbox" + a;
+
+  console.log(checkboxid);
+  console.log(b);
+
+  if(b == "ja") {
+
+    document.getElementById(checkboxid).value = "nee";
+
+  } else {
+
+    document.getElementById(checkboxid).value = "ja";
+
+  }
+
+
+  //document.getElementById("fieldname").value = ish;
+
 }
 
 

@@ -1,45 +1,59 @@
+<?php include  __DIR__ . '/src/components/header/header.php'; ?>
+
+
 <?php
 
-  include  __DIR__ . '/src/components/header/header.php';
+  session_start();
+
+  $id = $_GET['id'];
+
+  $doel_info = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE ID = '".$id."'");
+
+  $row = mysqli_fetch_array($doel_info,MYSQLI_ASSOC);
+
+  if(isset($_POST['submit'])) {
+    
+    $name = $_POST['name'];
+
+    $sql = "INSERT INTO subdoelen (TARGETID, NAME, CHECKED)
+        VALUES ('$id', '$name', 'nee')";
+
+    mysqli_query($db, $sql);
+
+    header("Location: doelen_detail.php?id=$id");
+
+  }
 
 ?>
 
-<?php
+  <div class="container">
+    <a class="button_terug" href="doelen_detail.php?id=<?php echo $id; ?>">Terug</a>
+  </div>
 
-	// VOEG ACTIVITEIT TOE
+  <div class="header__detail">
+    <div class="container">
 
-	session_start();
+      <div class="title">
+        Subdoel toevoegen
+      </div>
+      <div class="title__content">
+        voeg hier samen je subdoel toe voor de categorie <b>'<?php echo $row['NAME']; ?>'</b>.
+      </div>
 
-	$id = $_GET['id'];
+    </div>
+  </div>
 
-	if(isset($_POST['submit'])) {
+  <div class="container">
+    <ol class="add">
 
-		$name = $_POST['name'];
-		$timespan = $_POST['timespan'];
-		$priority = $_POST['priority'];
+       <form action="" method="POST">
+        <span>Naam</span>
+        <input type="text" name="name" autocomplete="off">
+        <input type="submit" name="submit" value="Toevoegen">
+       </form>
 
-		$sql = "INSERT INTO subdoelen (TARGETID, NAME, CHECKED, TIMESPAN, PRIORITY)
-				VALUES ('$id', '$name', 'nee', '$timespan', '$priority')";
 
-		mysqli_query($db, $sql);
+    </ol>
+  </div>
 
-		header("Location: doelen.php");
-
-	}
-
- ?>
-
-<!-- HTML -->
-
- <form action="" method="POST">
-	<input type="text" name="name">
-	<input type="text" name="timespan" value="0">
-	<input type="text" name="priority" value="0">
-	<input type="submit" name="submit" value="Toevoegen">
- </form>
-
-<?php
-
-  include __DIR__ . '/src/components/footer/footer.php';
-
-?>
+<?php include __DIR__ . '/src/components/footer/footer.php'; ?>
