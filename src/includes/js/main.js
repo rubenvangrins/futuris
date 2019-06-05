@@ -12,6 +12,8 @@ function myFunction() {
 
 const checkbox = document.querySelectorAll('.checkbox');
 
+
+
 let items = document.querySelector(".list").childElementCount;
 let procent = 100 / items;
 
@@ -22,20 +24,28 @@ let procent = 100 / items;
 
 function btnClick() {
   this.classList.toggle('checked');
+  beunhaas();
 }
+
 
 function beunhaas() {
+
+  let i = 0;
+  let bar = document.querySelector('.inner_bar');
+
   if (checkbox) {
     [...checkbox].forEach((checked) => {
-      let total = 0;
       let isChecked = checked.classList.contains("checked");
 
-      for (let sel = 0; sel < checkbox.length; sel++) {
-
+      if (isChecked == true) {
+        i++;
       }
-
     })
+
+    bar.style.width = procent * i + "%";
+
   }
 }
+
 
 beunhaas();

@@ -1,7 +1,7 @@
 <?php include  __DIR__ . '/src/components/header/header.php'; ?>
 
   <div class="container">
-    <a href="doelen-single.php" class="upper__link">Doelen</a>
+    <a href="doelen-single.php" class="upper__link">Terug</a>
   </div>
 
   <div class="header__detail">
@@ -22,13 +22,13 @@
   </div>
 
   <div class="container">
-    <ul class="list">
-      <li><span>1</span>Lunch <div class="checkbox checked" id="check"></div></li>
-      <li><span>2</span>Water <div class="checkbox checked"  id="check"></div></li>
-      <li><span>3</span>Laptop <div class="checkbox" id="check"></div></li>
-      <li><span>4</span>Oplader laptop <div class="checkbox" id="check"></div></li>
-      <li><span>5</span>Muis laptop <div class="checkbox" id="check"></div></li>
-    </ul>
+    <ol class="list">
+      <li><span>Lunch</span> <div class="checkbox checked" id="check"></div></li>
+      <li><span>Water</span><div class="checkbox checked"  id="check"></div></li>
+      <li><span>Laptop</span><div class="checkbox" id="check"></div></li>
+      <li><span>Oplader laptop</span><div class="checkbox" id="check"></div></li>
+      <li><span>Muis laptop</span><div class="checkbox" id="check"></div></li>
+    </ol>
     <a href="#" class="toevoegen">Sub-doel toevoegen</a>
   </div>
 
