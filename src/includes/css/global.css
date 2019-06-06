@@ -91,10 +91,27 @@ input[type="text"] {
 
 a.footer__link {
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 75px;
     bottom: 0;
 		left: 0;
+}
+
+a.footer__link2 {
+    position: absolute;
+    width: 40%;
+    height: 75px;
+    bottom: 0;
+		right: 0;
+}
+
+a.footer__link3 {
+    position: absolute;
+    width: 20%;
+    height: 75px;
+    bottom: 0;
+		right: 40%;
+		transform: translateY(-40%);
 }
 
 .footer__bottom img{
@@ -203,7 +220,7 @@ span.time {
 }
 
 .no_padding {
-	padding: 30px 0;
+	padding: 30px 0 100px 0;
 }
 
 ::placeholder {
@@ -321,13 +338,13 @@ ol.list {
 
 ol.list li {
 	position: relative;
-
 	margin-bottom: 15px;
 }
 
 ol.list li span {
 	margin-left: 15px;
 	display: inline-block;
+  padding: 0 20px 0 0;
 }
 
 input[type="checkbox"] {
@@ -506,4 +523,50 @@ select {
 .add_single {
 	padding: 0;
 	margin-bottom: 20px;
+}
+
+.streak ul li:after {
+    content: "5";
+    position: absolute;
+    top: 15px;
+    transform: translateY(-50%);
+    font-weight: 500;
+    right: 0;
+    font-size: 16px;
+}
+
+
+.streak ul li:nth-child(1):after {
+    content: "23";
+    position: absolute;
+    top: 20px;
+    transform: translateY(-50%);
+    font-weight: 500;
+    right: 0;
+    font-size: 16px;
+}
+
+.streak ul li:nth-child(2):after {
+    content: "7";
+    position: absolute;
+    top: 15px;
+    transform: translateY(-50%);
+    font-weight: 500;
+    right: 0;
+    font-size: 16px;
+}
+
+.streak ul li:nth-child(3):after {
+    content: "3";
+    position: absolute;
+    top: 15px;
+    transform: translateY(-50%);
+    font-weight: 500;
+    right: 0;
+    font-size: 16px;
+}
+
+.graph img {
+	width: 100%;
+	margin-top: 20px;
 }

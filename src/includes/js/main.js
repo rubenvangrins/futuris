@@ -14,6 +14,15 @@ if (window.location.href.indexOf("subdoel_add") != -1) {
   template.classList.add("no_padding");
 }
 
+if (window.location.href.indexOf("profile") != -1) {
+  template.classList.add("no_padding");
+}
+
+if (window.location.href.indexOf("begeleider") != -1) {
+  template.classList.add("no_padding");
+}
+
+
 function myFunction() {
   document.getElementById("myCheck").disabled = true;
 }

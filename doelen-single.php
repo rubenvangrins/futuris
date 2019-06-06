@@ -4,6 +4,12 @@
 
   session_start();
 
+  if(isset($_GET['id'])) {
+
+    $_SESSION['personid'] = $_GET['id'];
+
+  }
+
   $doelen_prio1 = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE PERSONID = '".$_SESSION['personid']."' AND PRIO = 1 ORDER BY ID DESC");
   $count_prio1 = mysqli_num_rows($doelen_prio1);
 
@@ -14,7 +20,7 @@
  ?>
 
 <div class="container add_single">
-      <a class="button_terug" href="doelen-single.php">Terug</a>
+      <a class="button_terug" href="doelen-single.php"></a>
       <a class="button_toevoegen" href="doel_add.php">Hoofddoel Toevoegen</a>
   </div>
 

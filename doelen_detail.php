@@ -39,7 +39,7 @@
  ?>
 
   <div class="container">
-      <a class="button_terug" href="doelen-single.php">Terug</a>
+      <a class="button_terug" href="doelen-single.php">Doelen</a>
       <a class="button_toevoegen" href="subdoel_add.php?id=<?php echo $id; ?>">Subdoel Toevoegen</a>
   </div>
 
@@ -87,7 +87,7 @@
       
 
     </ol>
-    <input type="submit" name="submit" value="toevoegen">
+    <input type="submit" name="submit" value="Opslaan">
     </form>
 
   </div>

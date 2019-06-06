@@ -14,8 +14,10 @@
   ?>
   
     <div class="footer__bottom">
-      <img src="src/includes/img/footer-menu.png" alt="">
+      <img src="src/includes/img/footer-menu2.png" alt="">
       <a class="footer__link" href="doelen-single.php"></a>
+      <a class="footer__link3" href="app_home.php"></a>
+      <a class="footer__link2" href="profile.php"></a>
     </div>
 
 <?php

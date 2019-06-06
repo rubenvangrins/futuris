@@ -15,17 +15,32 @@
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
   		$mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-		$sql = "SELECT ID FROM PERSONEN WHERE USERNAME = '$myusername' and PASSWORD = '$mypassword'";
+		$sql = "SELECT ID, ROLE FROM PERSONEN WHERE USERNAME = '$myusername' and PASSWORD = '$mypassword'";
 	    $result = mysqli_query($db,$sql);
 	    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 	    $count = mysqli_num_rows($result);
 
 			if ($count == 1) {
 
-				// GEEF PERSOONID MEE
-				$_SESSION['personid'] = $row["ID"];
+				 $functie = $row["ROLE"];
 
-				header("Location: app_home.php");
+				if ($functie == "begeleider") {
+
+					// GEEF PERSOONID MEE
+					$_SESSION['personid'] = $row["ID"];
+
+					header("Location: begeleider.php");
+
+				} else {
+
+					// GEEF PERSOONID MEE
+					$_SESSION['personid'] = $row["ID"];
+
+					header("Location: app_home.php");
+
+				}
+
+				
 
 			}
 

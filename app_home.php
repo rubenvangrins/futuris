@@ -1,23 +1,34 @@
 <?php include  __DIR__ . '/src/components/header/header.php'; ?>
 
+<?php
+
+  session_start();
+
+  $doelen_eenmalig = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE PERSONID = '".$_SESSION['personid']."' AND TIMESPAN = 'eenmalig' ORDER BY ID DESC");
+  $doelen_dagelijks = mysqli_query($db, "SELECT * FROM hoofdoelen WHERE PERSONID = '".$_SESSION['personid']."' AND TIMESPAN = 'dagelijks' ORDER BY ID DESC");
+
+?>
+
   <div class="daily__goals">
     <div class="header">
       Vandaag behalen
     </div>
     <div class="content">
       <ul>
+
+          <?php while ($row=mysqli_fetch_array($doelen_dagelijks)) { ?>
+
         <li>
-          <a href="#">Ochtendritueel verbeteren</a>
+          <a href="doelen_detail.php?id=<?php echo $row['ID']; ?>"><?php echo $row['NAME']; ?></a>
           <span class="time">
-            20 min.
+            <?php echo $row['TIME']; ?> min.
           </span>
         </li>
-        <li>
-          <a href="#">Tas inpakken</a>
-          <span class="time">
-            5 min.
-          </span>
-        </li>
+
+          <?php } ?>
+
+
+
       </ul>
     </div>
   </div>
@@ -40,18 +51,18 @@
     </div>
     <div class="content">
       <ul>
+
+          <?php while ($row=mysqli_fetch_array($doelen_eenmalig)) { ?>
+
         <li>
-          <a href="#">Ochtendritueel verbeteren</a>
+          <a href="doelen_detail.php?id=<?php echo $row['ID']; ?>"><?php echo $row['NAME']; ?></a>
           <span class="time">
-            20 min.
+            <?php echo $row['TIME']; ?> min.
           </span>
         </li>
-        <li>
-          <a href="#">Tas inpakken</a>
-          <span class="time">
-            5 min.
-          </span>
-        </li>
+
+          <?php } ?>
+          
       </ul>
     </div>
   </div>
